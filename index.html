@@ -134,7 +134,6 @@
     color: #67769a;
   }
 
-  /* 平板：601px ~ 1024px */
   @media (min-width: 601px) and (max-width: 1024px) {
     .stage { gap: 24px; }
     .avatar-wrap { width: min(200px, 40vw); height: min(200px, 40vw); }
@@ -145,7 +144,6 @@
     .colon { font-size: 26px; }
   }
 
-  /* 手机：≤600px */
   @media (max-width: 600px) {
     .stage { gap: 18px; padding: 18px; }
     .avatar-wrap { width: min(150px, 48vw); height: min(150px, 48vw); }
@@ -161,7 +159,6 @@
     .tag { font-size: 11px; }
   }
 
-  /* 超小屏：≤360px */
   @media (max-width: 360px) {
     .avatar-wrap { width: 128px; height: 128px; }
     .unit { min-width: 38px; }
@@ -200,7 +197,6 @@
   </main>
 
 <script>
-  /* 飘雪动画 */
   const canvas = document.getElementById('snow');
   const ctx = canvas.getContext('2d');
   let W, H, flakes = [];
@@ -248,9 +244,7 @@
   resize();
   tick();
 
-  /*时M
-     const start = new Date("2026-11-20 00:00:00").getTime(); */
-  const start = Date.now();
+  const start = new Date("2026-11-20 16:09:18").getTime();
   const el = {
     y: document.getElementById('y'),
     mo: document.getElementById('mo'),
