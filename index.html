@@ -134,6 +134,7 @@
     color: #67769a;
   }
 
+  /* 平板：601px ~ 1024px */
   @media (min-width: 601px) and (max-width: 1024px) {
     .stage { gap: 24px; }
     .avatar-wrap { width: min(200px, 40vw); height: min(200px, 40vw); }
@@ -144,6 +145,7 @@
     .colon { font-size: 26px; }
   }
 
+  /* 手机：≤600px */
   @media (max-width: 600px) {
     .stage { gap: 18px; padding: 18px; }
     .avatar-wrap { width: min(150px, 48vw); height: min(150px, 48vw); }
@@ -159,6 +161,7 @@
     .tag { font-size: 11px; }
   }
 
+  /* 超小屏：≤360px */
   @media (max-width: 360px) {
     .avatar-wrap { width: 128px; height: 128px; }
     .unit { min-width: 38px; }
@@ -197,6 +200,7 @@
   </main>
 
 <script>
+  /* 飘雪动画 */
   const canvas = document.getElementById('snow');
   const ctx = canvas.getContext('2d');
   let W, H, flakes = [];
@@ -204,7 +208,7 @@
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
-    const count = Math.min(160, Math.floor(W * H / 9000));
+    const count = Math.min(240, Math.floor(W * H / 6000));
     flakes = Array.from({ length: count }, () => spawn(true));
   }
 
@@ -212,12 +216,12 @@
     return {
       x: Math.random() * W,
       y: randomY ? Math.random() * H : -10,
-      r: Math.random() * 2.4 + 0.8,
-      speed: Math.random() * 1.1 + 0.4,
-      drift: Math.random() * 0.8 - 0.4,
+      r: Math.random() * 2.8 + 1,
+      speed: Math.random() * 1.4 + 0.5,
+      drift: Math.random() * 1 - 0.5,
       swing: Math.random() * Math.PI * 2,
-      swingSpeed: Math.random() * 0.02 + 0.005,
-      opacity: Math.random() * 0.55 + 0.3
+      swingSpeed: Math.random() * 0.025 + 0.006,
+      opacity: Math.random() * 0.6 + 0.35
     };
   }
 
@@ -243,7 +247,9 @@
   window.addEventListener('resize', resize);
   resize();
   tick();
-     const start = new Date("2026-11-20 16:09:18").getTime(); */
+
+  /*时
+     const start = new Date("2026-11-20 00:00:00").getTime(); */
   const start = Date.now();
   const el = {
     y: document.getElementById('y'),
